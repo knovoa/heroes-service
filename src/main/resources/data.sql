@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS TB_HERO;
+
+CREATE TABLE TB_HERO (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    NAME VARCHAR(250) NOT NULL,
+    ALIAS VARCHAR(250) NOT NULL
+);
+
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Charles Xavier','Profesor X');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Erick Lensherr','Magneto');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Scott Summers','Ciclope');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('James Howlett','Wolverine');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Hank McCoy','Bestia');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Ororo Monroe','Tormenta');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Jean Grey','Fenix');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Alex Summers','Havok');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Wade Wilson','Deadpool');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Piotr Rasputin','Coloso');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Worren Worthington III','Archangel');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Bobby Drake','Iceman');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('John Allerdyce','Pyro');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Anna Marie D''Ancanto','Rogue');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Kitty Pride','Sprite');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Roberto da Costa','Sunspot');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('Lucas Bishop Williepondt','Bishop');
+INSERT INTO TB_HERO (NAME, ALIAS) VALUES ('James Proudstar','Warpath');
