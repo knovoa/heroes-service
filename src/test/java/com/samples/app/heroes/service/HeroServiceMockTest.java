@@ -10,7 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Collections;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -31,6 +31,6 @@ class HeroServiceMockTest {
 
         Iterable<Hero> heroes = Collections.singletonList(hero);
         when(heroRepository.findAll()).thenReturn(heroes);
-        assertEquals(1, heroService.getHeroes(null).size());
+        assertThat(heroService.getHeroes(null).size()).isEqualTo(1);
     }
 }

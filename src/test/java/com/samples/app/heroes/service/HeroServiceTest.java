@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest
 class HeroServiceTest {
@@ -16,21 +16,28 @@ class HeroServiceTest {
     HeroService heroService;
 
     @Test
-    void shouldGetAllHeroes() {
+    void shouldGetAllHeroesWhenTermIsNull() {
+        List<Hero> heroes = heroService.getHeroes(null);
+        assertThat(heroes).isNotNull().isNotEmpty();
+    }
+
+    @Test
+    void shouldGetAllHeroesWhenTermIsEmpty() {
         List<Hero> heroes = heroService.getHeroes("");
-        assertFalse(heroes.isEmpty());
+        assertThat(heroes).isNotNull().isNotEmpty();
     }
 
     @Test
     void shouldGetAllHeroesByTerm() {
         List<Hero> heroes = heroService.getHeroes("Wol");
-        assertEquals(1, heroes.size());
+        assertThat(heroes.size()).isEqualTo(1);
+        assertThat(heroes.get(0).getName()).isEqualTo("James Howlett");
     }
 
     @Test
     void shouldGetHeroById() {
         Hero hero = heroService.getHeroById(1L);
-        assertEquals("Charles Xavier", hero.getName());
-        assertEquals("Profesor X", hero.getAlias());
+        assertThat(hero).isNotNull();
+        assertThat(hero.getName()).isEqualTo("Charles Xavier");
     }
 }

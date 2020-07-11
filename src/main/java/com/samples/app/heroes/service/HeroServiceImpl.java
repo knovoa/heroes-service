@@ -25,7 +25,7 @@ public class HeroServiceImpl implements HeroService {
     @Transactional(readOnly = true)
     public List<Hero> getHeroes(String term) {
         List<Hero> heroes = new ArrayList<>();
-        if (term != null) {
+        if (term != null && !term.isEmpty()) {
             heroRepository.findByTerm(term).forEach(heroes::add);
         } else {
             heroRepository.findAll().forEach(heroes::add);
