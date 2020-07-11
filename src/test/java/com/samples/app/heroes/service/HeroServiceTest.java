@@ -16,19 +16,19 @@ class HeroServiceTest {
     HeroService heroService;
 
     @Test
-    void shouldGetAllHeroesFromMemoryDatabase() {
+    void shouldGetAllHeroes() {
         List<Hero> heroes = heroService.getHeroes("");
         assertFalse(heroes.isEmpty());
     }
 
     @Test
-    void shouldGetAllHeroesByTermFromMemoryDatabase() {
+    void shouldGetAllHeroesByTerm() {
         List<Hero> heroes = heroService.getHeroes("Wol");
         assertEquals(1, heroes.size());
     }
 
     @Test
-    void shouldGetHeroByIdFromMemoryDatabase() {
+    void shouldGetHeroById() {
         Hero hero = heroService.getHeroById(1L);
         assertEquals("Charles Xavier", hero.getName());
         assertEquals("Profesor X", hero.getAlias());
